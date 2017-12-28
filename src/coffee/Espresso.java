@@ -1,8 +1,13 @@
 package coffee;
 
 public class Espresso extends Beverage {
-
-	public void cost() {
 	
+	public Espresso(){
+		description = "Espresso";
+	}
+	
+	@Override
+	public double cost() {
+		return 1.99;
 	}
 }

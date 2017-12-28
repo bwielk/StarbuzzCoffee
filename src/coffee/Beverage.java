@@ -2,11 +2,13 @@ package coffee;
 
 public abstract class Beverage {
 	
-	private String description;
+	protected String description;
 	
 	public String getDescription(){
 		return description;
 	}
 	
-	public abstract void cost();
+	public double cost(){
+		return 0.0;
+	}
 }
