@@ -28,8 +28,9 @@ public class DarkBlendTest{
 	public void blendCanHaveMilk(){
 		blend = new FullMilk(blend);
 		blend = new FullMilk(blend);
-		assertEquals("Dark Blend, full milk, full milk", blend.getDescription());
-		assertEquals(1.89, blend.cost(), 0.1);
+		blend = new Large(blend);
+		assertEquals("Large Dark Blend, full milk, full milk", blend.getDescription());
+		assertEquals(2.59, blend.cost(), 0.1);
 	}
 	
 }

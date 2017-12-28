@@ -28,8 +28,9 @@ public class EspressoTest{
 	public void espressoCanHaveSoyMilk(){
 		espresso = new Soy(espresso);
 		espresso = new Soy(espresso);
-		assertEquals(2.39, espresso.cost(), 0.1);
-		assertEquals("Espresso, soy, soy", espresso.getDescription());
+		espresso = new Medium(espresso);
+		assertEquals(2.89, espresso.cost(), 0.1);
+		assertEquals("Medium Espresso, soy, soy", espresso.getDescription());
 	}
 
 }
