@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DarkBlendTest{
 	
-	private DarkBlend blend;
+	private Beverage blend;
 	
 	@Before
 	public void before(){
@@ -23,5 +23,13 @@ public class DarkBlendTest{
 	public void blendHasPrice(){
 		assertEquals(0.89, blend.cost(), 0.1);
 	}
-
+	
+	@Test
+	public void blendCanHaveMilk(){
+		blend = new FullMilk(blend);
+		blend = new FullMilk(blend);
+		assertEquals("Dark Blend, full milk, full milk", blend.getDescription());
+		assertEquals(1.89, blend.cost(), 0.1);
+	}
+	
 }

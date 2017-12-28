@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class EspressoTest{
 
-	private Espresso espresso;
+	private Beverage espresso;
 	
 	@Before
 	public void before(){
@@ -22,6 +22,14 @@ public class EspressoTest{
 	@Test
 	public void espressoHasCost(){
 		assertEquals(1.99, espresso.cost(), 0.1);
+	}
+	
+	@Test
+	public void espressoCanHaveSoyMilk(){
+		espresso = new Soy(espresso);
+		espresso = new Soy(espresso);
+		assertEquals(2.39, espresso.cost(), 0.1);
+		assertEquals("Espresso, soy, soy", espresso.getDescription());
 	}
 
 }

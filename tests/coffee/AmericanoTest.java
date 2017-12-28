@@ -7,10 +7,7 @@ import org.junit.Test;
 
 public class AmericanoTest{
 	
-	private Americano americano;
-	private Whip whip;
-	private Soy soy;
-	private FullMilk milk;
+	private Beverage americano;
 
 	@Before
 	public void before() {
@@ -29,8 +26,17 @@ public class AmericanoTest{
 	
 	@Test
 	public void coffeeCanHaveWhip(){
-		whip = new Whip(americano);
+		americano = new Whip(americano);
 		assertEquals("Americano, whip", americano.getDescription());
+		assertEquals(1.39, americano.cost(), 0.1);
+	}
+	
+	@Test
+	public void coffeeCanHaveDoubleWhip(){
+		americano = new Whip(americano);
+		americano = new Whip(americano);
+		assertEquals("Americano, whip, whip", americano.getDescription());
+		assertEquals(1.79, americano.cost(), 0.1);
 	}
 
 }
